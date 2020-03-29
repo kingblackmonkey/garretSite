@@ -13,15 +13,15 @@ app.use(express.static( path.join(__dirname, 'public')));
 app.get('/', function (req, res,next) {
     res.send(path.join(__dirname, '/public/index.html'))
 });
-
-
+console.clear()
+console.log(process.env.User,   process.env.Pass)
 
 
 app.post('/sendmail', async function(req,res,next) {
 
     // this one is mail jet 
     // name: hien tran
-    // password same as school 
+    // password same as school   
     // email: school email
     // check back 30 days to see if you can send email 
     // it says trial end in 30 days
@@ -33,8 +33,8 @@ app.post('/sendmail', async function(req,res,next) {
             service: "Mailgun",
         
             auth: {    
-                user:  'postmaster@sandbox0e1061f83241468daaf982f6d9fe7997.mailgun.org',
-                pass:  '12812e91dade6228722cbe9dbf4fb52c-ed4dc7c4-504e097a'
+                user:  process.env.User,
+                pass:  process.env.Pass
               }
         });
  console.clear()
