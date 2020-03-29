@@ -33,8 +33,8 @@ app.post('/sendmail', async function(req,res,next) {
             service: "Mailgun",
         
             auth: {    
-                user: process.env.User,
-                pass:  process.env.Pass
+                user:  'postmaster@sandbox0e1061f83241468daaf982f6d9fe7997.mailgun.org',
+                pass:  '12812e91dade6228722cbe9dbf4fb52c-ed4dc7c4-504e097a'
               }
         });
  console.clear()
