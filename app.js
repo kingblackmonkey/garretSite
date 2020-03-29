@@ -30,7 +30,7 @@ app.post('/sendmail', async function(req,res,next) {
     
     try {
         let transporter =  nodemailer.createTransport({
-            service: '"Mailjet"',
+            service: "Mailgun",
         
             auth: {    
                 user: process.env.User,
@@ -42,7 +42,7 @@ app.post('/sendmail', async function(req,res,next) {
     
             let result = await transporter.sendMail({   
               from: req.body.email , // sender address
-              to: "teddybearqt2020@gmail.com", // list of receivers
+              to: "hient766@gmail.com", // list of receivers
               subject: "Message Sent From Your WebSite", // Subject line
               text:  req.body.message, // plain text body   
              
