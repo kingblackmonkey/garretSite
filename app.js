@@ -14,19 +14,11 @@ app.get('/', function (req, res,next) {
     res.send(path.join(__dirname, '/public/index.html'))
 });
 console.clear()
-// console.log(process.env.User,   process.env.Pass)
+
 
 
 app.post('/sendmail', async function(req,res,next) {
 
-    // this one is mail jet 
-    // name: hien tran
-    // password same as school   
-    // email: school email
-    // check back 30 days to see if you can send email 
-    // it says trial end in 30 days
-    // cannot use send grid cause it flags my ip or something
-  
     
     try {
         let transporter =  nodemailer.createTransport({
