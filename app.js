@@ -14,7 +14,7 @@ app.get('/', function (req, res,next) {
     res.send(path.join(__dirname, '/public/index.html'))
 });
 console.clear()
-console.log(process.env.User,   process.env.Pass)
+// console.log(process.env.User,   process.env.Pass)
 
 
 app.post('/sendmail', async function(req,res,next) {
@@ -30,23 +30,25 @@ app.post('/sendmail', async function(req,res,next) {
     
     try {
         let transporter =  nodemailer.createTransport({
-            service: "Mailgun",
-        
+                    
+           
+         service: "Gmail",
+
             auth: {    
-                user:  process.env.User,
-                pass:  process.env.Pass
-              }
+                user: process.env.User,
+                pass: process.env.Pass
+                }
         });
  console.clear()
         // console.log(req.body.email)
     
             let result = await transporter.sendMail({   
-              from: req.body.email , // sender address
-              to: "hient766@gmail.com", // list of receivers
+              from: process.env.User , // sender address
+              to: "garrettvond@gmail.com", // list of receivers
               subject: "Message Sent From Your WebSite", // Subject line
               text:  req.body.message, // plain text body   
              
-              html: `<p>${ req.body.message}</P>`
+              html: `<p>Original Sender: ${req.body.email} </p> <p>Message: ${ req.body.message}</P>`
             }); 
 
            
