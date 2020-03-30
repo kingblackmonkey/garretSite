@@ -35,16 +35,16 @@ app.post('/sendmail', async function(req,res,next) {
          service: "Gmail",
 
             auth: {    
-                user: process.env.User,
-                pass: process.env.Pass
+                user: process.env.UserEmail,
+                pass: process.env.PassEmail
                 }
         });
  console.clear()
         // console.log(req.body.email)
     
             let result = await transporter.sendMail({   
-              from: process.env.User , // sender address
-              to: "garrettvond@gmail.com", // list of receivers
+              from: process.env.UserEmail , // sender address
+              to: "hient766@gmail.com", // list of receivers
               subject: "Message Sent From Your WebSite", // Subject line
               text:  req.body.message, // plain text body   
              
